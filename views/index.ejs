@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OBIZZSTOCK V10</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+    .container { background: white; padding: 20px; border-radius: 10px; max-width: 800px; margin: auto; }
+    input, button { padding: 10px; margin: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    button { background: green; color: white; border: none; cursor: pointer; }
+    button:hover { background: darkgreen; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    th { background: #28a745; color: white; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>OBIZZSTOCK V10 🔥</h1>
+    <p>Sistema yo gucunga ibicuruzwa</p>
+    
+    <h3>Kongeramo Igicuruzwa Gishya</h3>
+    <form action="/add" method="POST">
+      <input type="text" name="name" placeholder="Izina ry'igicuruzwa" required>
+      <input type="number" name="price" placeholder="Igiciro Rwf" required>
+      <input type="number" name="stock" placeholder="Ingano" required>
+      <button type="submit">Bika Igicuruzwa</button>
+    </form>
+
+    <h3>Urutonde rw'ibicuruzwa</h3>
+    <table>
+      <tr><th>Izina</th><th>Igiciro</th><th>Ingano</th></tr>
+      <% if(products.length > 0) { %>
+        <% products.forEach(function(product) { %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.price %> Rwf</td>
+            <td><%= product.stock %></td>
+          </tr>
+        <% }); %>
+      <% } else { %>
+        <tr><td colspan="3">Nta bicuruzwa birahari. Ongeramo kimwe hejuru</td></tr>
+      <% } %>
+    </table>
+  </div>
+</body>
+</html>
